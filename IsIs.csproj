@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CC130979-3B97-47F5-8655-0A49BC2DF971}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IsIs</RootNamespace>
+    <AssemblyName>IsIs</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contracts\ICommand.cs" />
+    <Compile Include="Contracts\ICommandDispatcher.cs" />
+    <Compile Include="Contracts\IDatabase.cs" />
+    <Compile Include="Contracts\IEngine.cs" />
+    <Compile Include="Contracts\IAttack.cs" />
+    <Compile Include="Contracts\IAttackFactory.cs" />
+    <Compile Include="Contracts\IGroup.cs" />
+    <Compile Include="Contracts\IInputReader.cs" />
+    <Compile Include="Contracts\IOutputWriter.cs" />
+    <Compile Include="Contracts\IGroupFactory.cs" />
+    <Compile Include="Contracts\IUpdatable.cs" />
+    <Compile Include="Contracts\IWarEffect.cs" />
+    <Compile Include="Contracts\IWarEffectFactory.cs" />
+    <Compile Include="Core\CommandDispatcher.cs" />
+    <Compile Include="Core\Commands\AkbarCommand.cs" />
+    <Compile Include="Core\Commands\AttackCommand.cs" />
+    <Compile Include="Core\Commands\CommandBase.cs" />
+    <Compile Include="Core\Commands\CreateCommand.cs" />
+    <Compile Include="Core\Commands\ApocalypseCommand.cs" />
+    <Compile Include="Core\Commands\StatusCommand.cs" />
+    <Compile Include="Core\Engine.cs" />
+    <Compile Include="Core\EngineDb.cs" />
+    <Compile Include="Core\Exceptions\EngineException.cs" />
+    <Compile Include="Core\Factories\AttackFactory.cs" />
+    <Compile Include="Core\Factories\GroupFactory.cs" />
+    <Compile Include="Core\Factories\WarEffectFactory.cs" />
+    <Compile Include="Core\UI\ConsoleReader.cs" />
+    <Compile Include="Core\UI\ConsoleWriter.cs" />
+    <Compile Include="Core\Utils\Validator.cs" />
+    <Compile Include="IsIsMain.cs" />
+    <Compile Include="Models\Attacks\AttackBase.cs" />
+    <Compile Include="Models\Attacks\Paris.cs" />
+    <Compile Include="Models\Attacks\Su24.cs" />
+    <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\WarEffects\Jihad.cs" />
+    <Compile Include="Models\WarEffects\Kamikaze.cs" />
+    <Compile Include="Models\WarEffects\WarEffectBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
